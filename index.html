@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosa </title>
+    <style>
+        input {
+            width: 50px;
+            text-align: center;
+            font-weight: 600;
+            height: 25px;
+            font-size: 18px;
+            outline: none;
+        }
+
+        button {
+            padding: 5px 12px;
+            background-color: rgb(102, 195, 102);
+        }
+
+        .btn {
+            margin-right: 20px;
+        }
+
+        output {
+            font-size: 18px;
+            font-weight: 600;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center" style="margin-top: 12%;">
+        <img src="./dosa.jfif" alt="dosa image">
+        <h4>Neyyi Karam Onion Dosa &#8377; 120</h4>
+    </div>
+    <div align="center">
+        <button id="decrement">-</button>
+        <input type="text" id="qty" value="0" readonly>
+        <button id="increment" class="btn">+</button>
+        <output id="amt">&#8377;0</output>
+    </div>
+
+    <script>
+        let qty = document.querySelector("#qty");
+        let amt = document.querySelector("#amt");
+
+        document.querySelector("#decrement").onclick = () => {
+            if (qty.value > 0) {
+                qty.value -= 1;
+                amt.innerHTML = `&#8377;${qty.value * 120}`
+            }
+            else {
+                alert("Hey, your count is empty")
+            }
+        }
+        document.querySelector("#increment").onclick = () => {
+            qty.value = +qty.value + 1;
+            amt.innerHTML = `&#8377;${qty.value * 120}`
+        }
+    </script>
+</body>
+
+</html>
